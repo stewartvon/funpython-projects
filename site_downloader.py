@@ -6,6 +6,7 @@ from requests import RequestException, HTTPError, ConnectionError, URLRequired, 
 def download(url, tries=3):
     """
     This function downloads a site using request
+    and BeautifulSoup. It returns a BeautifulSoup object
     and also has some functionality in place to
     catch exceptions and do retries if the script
     didn't work.
@@ -26,6 +27,4 @@ def download(url, tries=3):
             return download(url, tries - 1)
         soup = None
     return soup
-
-
 
